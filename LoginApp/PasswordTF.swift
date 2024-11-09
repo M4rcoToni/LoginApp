@@ -37,17 +37,16 @@ struct PasswordTF: View {
                     isActive = true
                 }
         }
-        
-      
-            .overlay(alignment: .trailing){
-                Image(systemName: showPassword ? "eye.fill" : "eye.slash.fill")
-                    .padding(16)
-                    .contentShape(Rectangle())
-                    .foregroundStyle(showPassword ? .primary : .secondary)
-                    .onTapGesture {
-                        showPassword.toggle()
-                    }
-            }
+        .overlay(alignment: .trailing){
+            Image(systemName: showPassword ? "eye.fill" : "eye.slash.fill")
+                .padding(16)
+                .contentShape(Rectangle())
+                .foregroundStyle(showPassword ? .primary : .secondary)
+                .onTapGesture {
+                    showPassword.toggle()
+                }
+                .animation(.linear, value: showPassword)
+        }
     }
 }
 

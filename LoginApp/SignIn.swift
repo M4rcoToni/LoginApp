@@ -21,9 +21,22 @@ struct SignIn: View {
             TopView(title: "Welcome back", details: "Please sign up in to your account:")
             InfoTF(title: "Email", text: $email)
             
-            VStack{
+            VStack(spacing: 24){
                 PasswordTF(title: "Password", text: $password)
+                HStack {
+                    Toggle(isOn: $remenber, label: {
+                        /*@START_MENU_TOKEN@*/Text("Label")/*@END_MENU_TOKEN@*/
+                    })
+                    .toggleStyle(RememberStyle())
+                    Spacer()
+                    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                        Text("Forgot password")
+                    })
+                    .tint(.primary)
+                }
             }
+            
+            SignButton(title: "Sign In", action: {})
         }.padding()
     }
 }
@@ -69,4 +82,34 @@ struct InfoTF: View {
     }
 }
 
+
+struct RememberStyle: ToggleStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        Button{
+            configuration.isOn.toggle()
+        } label: {
+            HStack{
+                Image(systemName: configuration.isOn ? "checkmark.square" : "square")
+                    .contentTransition(.symbolEffect)
+                Text("Remember")
+            }
+        }
+        .tint(.primary)
+    }
+}
+
+struct SignButton: View {
+    var title: String
+    var action: () -> Void
+    var body: some View {
+        Button(action: {action()}, label: {
+            Text(title)
+                .foregroundStyle(.black).font(.title2.bold())
+                .frame(maxWidth: .infinity)
+                .frame(height: 55)
+                .background(.primary, in: .rect(cornerRadius: 16))
+        })
+        .tint(.primary)
+    }
+}
 

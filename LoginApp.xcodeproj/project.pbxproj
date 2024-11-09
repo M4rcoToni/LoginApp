@@ -16,8 +16,6 @@
 		A9A2B1CE2CDDA0ED005EEF01 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A2B1CD2CDDA0ED005EEF01 /* ContentView.swift */; };
 		A9A2B1D02CDDA0EE005EEF01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9A2B1CF2CDDA0EE005EEF01 /* Assets.xcassets */; };
 		A9A2B1D32CDDA0EE005EEF01 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9A2B1D22CDDA0EE005EEF01 /* Preview Assets.xcassets */; };
-		A9A2B1DB2CDDAF9F005EEF01 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = A9A2B1DA2CDDAF9F005EEF01 /* FirebaseAuth */; };
-		A9A2B1DD2CDDAF9F005EEF01 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = A9A2B1DC2CDDAF9F005EEF01 /* FirebaseStorage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,8 +36,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9A2B1DB2CDDAF9F005EEF01 /* FirebaseAuth in Frameworks */,
-				A9A2B1DD2CDDAF9F005EEF01 /* FirebaseStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,8 +99,6 @@
 			);
 			name = LoginApp;
 			packageProductDependencies = (
-				A9A2B1DA2CDDAF9F005EEF01 /* FirebaseAuth */,
-				A9A2B1DC2CDDAF9F005EEF01 /* FirebaseStorage */,
 			);
 			productName = LoginApp;
 			productReference = A9A2B1C82CDDA0ED005EEF01 /* LoginApp.app */;
@@ -384,19 +378,6 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		A9A2B1DA2CDDAF9F005EEF01 /* FirebaseAuth */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A9A2B1D92CDDAF9F005EEF01 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAuth;
-		};
-		A9A2B1DC2CDDAF9F005EEF01 /* FirebaseStorage */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A9A2B1D92CDDAF9F005EEF01 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseStorage;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A9A2B1C02CDDA0ED005EEF01 /* Project object */;
 }
