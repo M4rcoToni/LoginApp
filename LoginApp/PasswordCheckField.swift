@@ -129,7 +129,7 @@ struct CheckText: View {
                 .contentTransition(.symbolEffect)
             Text(text)
         }
-        .foregroundColor(check ? .white : .secondary )
+        .foregroundColor(check ? .input : .secondary )
     }
 }
 
