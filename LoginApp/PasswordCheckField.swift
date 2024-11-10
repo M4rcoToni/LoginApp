@@ -15,6 +15,9 @@ struct PasswordCheckField: View {
     @State var checkPunctuation = false
     @State var checkNumber = false
     @State var showPassword = false
+    @State var widhtCal: CGFloat = 0
+    let screenWidth = UIScreen.main.bounds.width - 32
+    let part = (UIScreen.main.bounds.width - 32)  / 4
     var progressColor: Color{
         let containsLetters = text.rangeOfCharacter(from: .letters) != nil
         let containsNumbers = text.rangeOfCharacter(from: .decimalDigits) != nil
@@ -33,6 +36,7 @@ struct PasswordCheckField: View {
             return .gray
         }
     }
+
     var body: some View {
         VStack(alignment: .leading, spacing: 24){
             ZStack (alignment: .leading){
@@ -61,9 +65,18 @@ struct PasswordCheckField: View {
                     .onChange(of: text, { oldValue, newValue in
                         withAnimation{
                             checkMinChars = newValue.count >= 8
+                           
                             checkLetter = newValue.rangeOfCharacter(from: .letters) != nil
+                          
                             checkNumber = newValue.rangeOfCharacter(from: .decimalDigits) != nil
+                          
                             checkPunctuation = newValue.rangeOfCharacter(from: CharacterSet(charactersIn:  "!@#^&$")) != nil
+                          
+                            widhtCal = CGFloat((checkMinChars ? part : 0) +
+                                                 (checkLetter ? part : 0) +
+                                                 (checkNumber ? part : 0) +
+                                                 (checkPunctuation ? part : 0))
+
                         }
                         
                     })
@@ -78,10 +91,24 @@ struct PasswordCheckField: View {
                     }
                     .animation(.linear, value: showPassword)
             }
+            ZStack{
+                RoundedRectangle(cornerRadius: 12)
+                    .frame(height: 1.5)
+                    .foregroundColor(.secondary)
+                RoundedRectangle(cornerRadius: 12)
+                    .frame(height: 1.5)
+                    .foregroundColor(progressColor)
+                    .frame(width: widhtCal)
+                    .frame(maxWidth: screenWidth)
+                
+            }
+            
+        
+           
             VStack(alignment: .leading, spacing: 12){
                 CheckText(text: "Minimum 8 characters", check: $checkMinChars)
                 CheckText(text: "At least one letter", check: $checkLetter)
-                CheckText(text: "(!@#^&$)", check: $checkMinChars)
+                CheckText(text: "(!@#^&$)", check: $checkPunctuation)
                 CheckText(text: "Number", check: $checkNumber)
             }
         }
@@ -89,7 +116,7 @@ struct PasswordCheckField: View {
 }
 
 #Preview {
-    PasswordCheckField()
+    HomeView()
 }
 
 
