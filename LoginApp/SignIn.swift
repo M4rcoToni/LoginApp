@@ -18,6 +18,7 @@ struct SignIn: View {
     var action: () -> Void
     var body: some View {
         VStack(spacing: 45){
+            Spacer()
             TopView(title: "Welcome back", details: "Please sign up in to your account:")
             InfoTF(title: "Email", text: $email)
             
@@ -37,6 +38,24 @@ struct SignIn: View {
             }
             
             SignButton(title: "Sign In", action: {})
+            OrView(title: "Or")
+            
+            HStack(spacing: 65){
+                SignAccount(image: .apple, height: 32, width: 32, action: {})
+                SignAccount(image: .mail, height: 32, width: 32, action: {})
+                SignAccount(image: .google, height: 32, width: 32, action: {})
+            }
+            Spacer()
+            Button{
+                email = ""
+                password = ""
+                withAnimation {
+                    showSignUp.toggle()
+                }
+            } label: {
+                Text("Don't have an account? ***Sign up***")
+            }
+            .tint(.primary)
         }.padding()
     }
 }
@@ -73,7 +92,7 @@ struct InfoTF: View {
             Text(title)
                 .padding(.leading)
                 .offset(y: (isActive || !text.isEmpty) ? -50 : 0)
-                .foregroundStyle(isActive ? .white : .secondary)
+                .foregroundStyle(isActive ? .input : .secondary)
                 .animation(.spring, value: isActive)
                 .onTapGesture {
                     isActive = true
@@ -104,7 +123,7 @@ struct SignButton: View {
     var body: some View {
         Button(action: {action()}, label: {
             Text(title)
-                .foregroundStyle(.black).font(.title2.bold())
+                .foregroundStyle(.siginText).font(.title2.bold())
                 .frame(maxWidth: .infinity)
                 .frame(height: 55)
                 .background(.primary, in: .rect(cornerRadius: 16))
@@ -113,3 +132,42 @@ struct SignButton: View {
     }
 }
 
+struct OrView: View {
+    var title: String
+    var body: some View {
+        HStack{
+            Rectangle()
+                .frame(height: 1.5)
+                .foregroundStyle(.gray.opacity(0.3))
+            
+            Text(title)
+                
+            Rectangle()
+                .frame(height: 1.5)
+                .foregroundStyle(.gray.opacity(0.3))
+        }
+    }
+}
+
+
+struct SignAccount: View {
+    var image: ImageResource
+    var height: CGFloat
+    var width: CGFloat
+    var action: () -> Void
+    var body: some View {
+        Button(action: {}, label: {
+            Image(image)
+                .renderingMode(.template)
+                .resizable().scaledToFit()
+                .frame(width: width, height: height)
+                .overlay{
+                    RoundedRectangle(cornerRadius: 12)
+                        .stroke(lineWidth: 1.5)
+                        .frame(width: 50, height: 50)
+                        .foregroundStyle(.gray.opacity(0.3))
+                }
+        })
+        .tint(.primary)
+    }
+}

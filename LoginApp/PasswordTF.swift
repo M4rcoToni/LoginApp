@@ -31,7 +31,7 @@ struct PasswordTF: View {
             Text(title)
                 .padding(.leading)
                 .offset(y: (isActive || !text.isEmpty) ? -50 : 0)
-                .foregroundStyle(isActive ? .white : .secondary)
+                .foregroundStyle(isActive ? .input : .secondary)
                 .animation(.spring, value: isActive)
                 .onTapGesture {
                     isActive = true
