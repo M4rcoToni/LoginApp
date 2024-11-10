@@ -11,17 +11,23 @@ struct HomeView: View {
     @State var email = ""
     @State var password = ""
     @State var remember = false
-    @State var showSignUp = false
+    @State var showSignUp = true
     var body: some View {
         ScrollView(.vertical, showsIndicators: false){
             if showSignUp {
-                
-            } else {
-                SignIn(email: $email, password: $password, remenber: $remember, showSignUp: $showSignUp, action: {})
+                SignUp(email: $email, password: $password, remenber: $remember, showSignIn: $showSignUp, action: {})
                     .transition(
                         .asymmetric(
                             insertion: .move(edge: .trailing),
                             removal: .move(edge: .trailing)
+                        )
+                    )
+            } else {
+                SignIn(email: $email, password: $password, remenber: $remember, showSignUp: $showSignUp, action: {})
+                    .transition(
+                        .asymmetric(
+                            insertion: .move(edge: .leading),
+                            removal: .move(edge: .leading)
                         )
                     )
             }
