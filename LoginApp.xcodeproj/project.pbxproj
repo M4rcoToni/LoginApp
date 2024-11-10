@@ -13,6 +13,7 @@
 		A96866F12CDF34D800F3AA7A /* PasswordTF.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96866F02CDF34D800F3AA7A /* PasswordTF.swift */; };
 		A96866F52CE0377E00F3AA7A /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96866F42CE0377E00F3AA7A /* SignUp.swift */; };
 		A96866F72CE0410E00F3AA7A /* PasswordCheckField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96866F62CE0410E00F3AA7A /* PasswordCheckField.swift */; };
+		A96866F92CE0E22100F3AA7A /* ForgotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96866F82CE0E22100F3AA7A /* ForgotView.swift */; };
 		A9A2B1CC2CDDA0ED005EEF01 /* LoginAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A2B1CB2CDDA0ED005EEF01 /* LoginAppApp.swift */; };
 		A9A2B1CE2CDDA0ED005EEF01 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A2B1CD2CDDA0ED005EEF01 /* ContentView.swift */; };
 		A9A2B1D02CDDA0EE005EEF01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9A2B1CF2CDDA0EE005EEF01 /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 		A96866F02CDF34D800F3AA7A /* PasswordTF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTF.swift; sourceTree = "<group>"; };
 		A96866F42CE0377E00F3AA7A /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		A96866F62CE0410E00F3AA7A /* PasswordCheckField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordCheckField.swift; sourceTree = "<group>"; };
+		A96866F82CE0E22100F3AA7A /* ForgotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotView.swift; sourceTree = "<group>"; };
 		A9A2B1C82CDDA0ED005EEF01 /* LoginApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9A2B1CB2CDDA0ED005EEF01 /* LoginAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAppApp.swift; sourceTree = "<group>"; };
 		A9A2B1CD2CDDA0ED005EEF01 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 				A96866EE2CDF2E3C00F3AA7A /* SignIn.swift */,
 				A96866F42CE0377E00F3AA7A /* SignUp.swift */,
 				A96866F02CDF34D800F3AA7A /* PasswordTF.swift */,
+				A96866F82CE0E22100F3AA7A /* ForgotView.swift */,
 			);
 			path = LoginApp;
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 				A96866EF2CDF2E3C00F3AA7A /* SignIn.swift in Sources */,
 				A9A2B1CE2CDDA0ED005EEF01 /* ContentView.swift in Sources */,
 				A9A2B1CC2CDDA0ED005EEF01 /* LoginAppApp.swift in Sources */,
+				A96866F92CE0E22100F3AA7A /* ForgotView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

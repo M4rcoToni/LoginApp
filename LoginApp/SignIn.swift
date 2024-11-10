@@ -30,7 +30,9 @@ struct SignIn: View {
                     })
                     .toggleStyle(RememberStyle())
                     Spacer()
-                    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                    Button(action: {
+                        showForgotView.toggle()
+                    }, label: {
                         Text("Forgot password")
                     })
                     .tint(.primary)
@@ -42,7 +44,7 @@ struct SignIn: View {
             
             HStack(spacing: 65){
                 SignAccount(image: .apple, height: 32, width: 32, action: {})
-                SignAccount(image: .mail, height: 32, width: 32, action: {})
+                SignAccount(image: .facebook, height: 32, width: 32, action: {})
                 SignAccount(image: .google, height: 32, width: 32, action: {})
             }
             Spacer()
@@ -56,7 +58,13 @@ struct SignIn: View {
                 Text("Don't have an account? ***Sign up***")
             }
             .tint(.primary)
-        }.padding()
+        }
+        .padding()
+        .sheet(isPresented: $showForgotView, content: {
+            ForgotView()
+                .presentationDetents([.fraction(0.4)])
+                .presentationCornerRadius(32)
+        })
     }
 }
 

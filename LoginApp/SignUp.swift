@@ -29,7 +29,7 @@ struct SignUp: View {
             
             HStack(spacing: 65){
                 SignAccount(image: .apple, height: 32, width: 32, action: {})
-                SignAccount(image: .mail, height: 32, width: 32, action: {})
+                SignAccount(image: .facebook, height: 32, width: 32, action: {})
                 SignAccount(image: .google, height: 32, width: 32, action: {})
             }
             Spacer()

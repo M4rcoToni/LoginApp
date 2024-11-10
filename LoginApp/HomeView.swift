@@ -11,7 +11,7 @@ struct HomeView: View {
     @State var email = ""
     @State var password = ""
     @State var remember = false
-    @State var showSignUp = true
+    @State var showSignUp = false
     var body: some View {
         ScrollView(.vertical, showsIndicators: false){
             if showSignUp {
