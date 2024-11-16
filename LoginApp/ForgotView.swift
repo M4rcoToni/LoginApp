@@ -25,7 +25,7 @@ struct ForgotView: View {
                 .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
                 .frame(height: 55)
                 .background(.gray.opacity(0.3), in: .rect(cornerRadius: 16))
-            SignButton(title: "Send", action: {})
+            SignButton(title: "Send", action: {}, isLoading: false)
             Spacer()
         }
         .padding()

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A96866E92CDDB87E00F3AA7A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A96866E82CDDB87D00F3AA7A /* GoogleService-Info.plist */; };
 		A96866ED2CDF2E1E00F3AA7A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96866EC2CDF2E1E00F3AA7A /* HomeView.swift */; };
 		A96866EF2CDF2E3C00F3AA7A /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96866EE2CDF2E3C00F3AA7A /* SignIn.swift */; };
 		A96866F12CDF34D800F3AA7A /* PasswordTF.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96866F02CDF34D800F3AA7A /* PasswordTF.swift */; };
@@ -18,10 +17,13 @@
 		A9A2B1CE2CDDA0ED005EEF01 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A2B1CD2CDDA0ED005EEF01 /* ContentView.swift */; };
 		A9A2B1D02CDDA0EE005EEF01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9A2B1CF2CDDA0EE005EEF01 /* Assets.xcassets */; };
 		A9A2B1D32CDDA0EE005EEF01 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9A2B1D22CDDA0EE005EEF01 /* Preview Assets.xcassets */; };
+		A9F08F9B2CE92F09002485BE /* Auth in Frameworks */ = {isa = PBXBuildFile; productRef = A9F08F9A2CE92F09002485BE /* Auth */; };
+		A9F08F9F2CE930A6002485BE /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = A9F08F9E2CE930A6002485BE /* Supabase */; };
+		A9F08FA22CE9322C002485BE /* Supabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F08FA12CE9322C002485BE /* Supabase.swift */; };
+		A9F08FA72CE93ACC002485BE /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F08FA62CE93ACC002485BE /* AppView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A96866E82CDDB87D00F3AA7A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A96866EC2CDF2E1E00F3AA7A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		A96866EE2CDF2E3C00F3AA7A /* SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
 		A96866F02CDF34D800F3AA7A /* PasswordTF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTF.swift; sourceTree = "<group>"; };
@@ -33,6 +35,9 @@
 		A9A2B1CD2CDDA0ED005EEF01 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A9A2B1CF2CDDA0EE005EEF01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A9A2B1D22CDDA0EE005EEF01 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A9F08FA12CE9322C002485BE /* Supabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Supabase.swift; sourceTree = "<group>"; };
+		A9F08FA32CE93903002485BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		A9F08FA62CE93ACC002485BE /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +45,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9F08F9F2CE930A6002485BE /* Supabase in Frameworks */,
+				A9F08F9B2CE92F09002485BE /* Auth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,6 +58,7 @@
 			children = (
 				A9A2B1CA2CDDA0ED005EEF01 /* LoginApp */,
 				A9A2B1C92CDDA0ED005EEF01 /* Products */,
+				A9F08FA02CE931ED002485BE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,7 +73,7 @@
 		A9A2B1CA2CDDA0ED005EEF01 /* LoginApp */ = {
 			isa = PBXGroup;
 			children = (
-				A96866E82CDDB87D00F3AA7A /* GoogleService-Info.plist */,
+				A9F08FA32CE93903002485BE /* Info.plist */,
 				A9A2B1CB2CDDA0ED005EEF01 /* LoginAppApp.swift */,
 				A9A2B1CD2CDDA0ED005EEF01 /* ContentView.swift */,
 				A9A2B1CF2CDDA0EE005EEF01 /* Assets.xcassets */,
@@ -76,6 +84,8 @@
 				A96866F42CE0377E00F3AA7A /* SignUp.swift */,
 				A96866F02CDF34D800F3AA7A /* PasswordTF.swift */,
 				A96866F82CE0E22100F3AA7A /* ForgotView.swift */,
+				A9F08FA62CE93ACC002485BE /* AppView.swift */,
+				A9F08FA12CE9322C002485BE /* Supabase.swift */,
 			);
 			path = LoginApp;
 			sourceTree = "<group>";
@@ -86,6 +96,13 @@
 				A9A2B1D22CDDA0EE005EEF01 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A9F08FA02CE931ED002485BE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -105,6 +122,8 @@
 			);
 			name = LoginApp;
 			packageProductDependencies = (
+				A9F08F9A2CE92F09002485BE /* Auth */,
+				A9F08F9E2CE930A6002485BE /* Supabase */,
 			);
 			productName = LoginApp;
 			productReference = A9A2B1C82CDDA0ED005EEF01 /* LoginApp.app */;
@@ -135,7 +154,7 @@
 			);
 			mainGroup = A9A2B1BF2CDDA0ED005EEF01;
 			packageReferences = (
-				A9A2B1D92CDDAF9F005EEF01 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				A9F08F992CE92F08002485BE /* XCRemoteSwiftPackageReference "supabase-swift" */,
 			);
 			productRefGroup = A9A2B1C92CDDA0ED005EEF01 /* Products */;
 			projectDirPath = "";
@@ -152,7 +171,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9A2B1D32CDDA0EE005EEF01 /* Preview Assets.xcassets in Resources */,
-				A96866E92CDDB87E00F3AA7A /* GoogleService-Info.plist in Resources */,
 				A9A2B1D02CDDA0EE005EEF01 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -168,9 +186,11 @@
 				A96866F72CE0410E00F3AA7A /* PasswordCheckField.swift in Sources */,
 				A96866F52CE0377E00F3AA7A /* SignUp.swift in Sources */,
 				A96866ED2CDF2E1E00F3AA7A /* HomeView.swift in Sources */,
+				A9F08FA22CE9322C002485BE /* Supabase.swift in Sources */,
 				A96866EF2CDF2E3C00F3AA7A /* SignIn.swift in Sources */,
 				A9A2B1CE2CDDA0ED005EEF01 /* ContentView.swift in Sources */,
 				A9A2B1CC2CDDA0ED005EEF01 /* LoginAppApp.swift in Sources */,
+				A9F08FA72CE93ACC002485BE /* AppView.swift in Sources */,
 				A96866F92CE0E22100F3AA7A /* ForgotView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -307,6 +327,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"LoginApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LoginApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -336,6 +357,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"LoginApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LoginApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -379,15 +401,28 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		A9A2B1D92CDDAF9F005EEF01 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+		A9F08F992CE92F08002485BE /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			repositoryURL = "https://github.com/supabase/supabase-swift";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 11.4.0;
+				minimumVersion = 2.5.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A9F08F9A2CE92F09002485BE /* Auth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A9F08F992CE92F08002485BE /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Auth;
+		};
+		A9F08F9E2CE930A6002485BE /* Supabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A9F08F992CE92F08002485BE /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Supabase;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A9A2B1C02CDDA0ED005EEF01 /* Project object */;
 }

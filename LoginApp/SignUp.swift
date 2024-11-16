@@ -14,6 +14,8 @@ struct SignUp: View {
     @Binding var remenber: Bool
     @Binding var showSignIn: Bool
     @State var showForgotView = false
+    @State var isLoading = false
+    @State var result: Result<Void, Error>?
     
     var action: () -> Void
     var body: some View {
@@ -23,8 +25,8 @@ struct SignUp: View {
             InfoTF(title: "Email", text: $email)
             
 
-            PasswordCheckField()
-            SignButton(title: "Sign Up", action: {})
+            PasswordCheckField(text: $password)
+            SignButton(title: "Sign Up", action: signUp, isLoading: false)
             OrView(title: "Or")
             
             HStack(spacing: 65){
@@ -44,6 +46,24 @@ struct SignUp: View {
             }
             .tint(.primary)
         }.padding(.horizontal)
+    }
+    
+    func signUp() {
+        print(email)
+        Task {
+          isLoading = true
+          defer { isLoading = false }
+
+          do {
+            try await supabase.auth.signUp(
+              email: email,
+              password: password
+            )
+            result = .success(())
+          } catch {
+            result = .failure(error)
+          }
+        }
     }
 }
 

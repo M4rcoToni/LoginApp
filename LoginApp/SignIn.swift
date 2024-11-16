@@ -14,6 +14,8 @@ struct SignIn: View {
     @Binding var remenber: Bool
     @Binding var showSignUp: Bool
     @State var showForgotView = false
+    @State var isLoading = false
+    @State var result: Result<Void, Error>?
     
     var action: () -> Void
     var body: some View {
@@ -39,7 +41,7 @@ struct SignIn: View {
                 }
             }
             
-            SignButton(title: "Sign In", action: {})
+            SignButton(title: "Sign In", action: sigin, isLoading: isLoading)
             OrView(title: "Or")
             
             HStack(spacing: 65){
@@ -66,6 +68,25 @@ struct SignIn: View {
                 .presentationCornerRadius(32)
         })
     }
+    
+    func sigin() {
+        print(email)
+        Task {
+          isLoading = true
+          defer { isLoading = false }
+
+          do {
+            try await supabase.auth.signIn(
+              email: email,
+              password: password
+            )
+            result = .success(())
+          } catch {
+            result = .failure(error)
+          }
+        }
+    }
+    
 }
 
 #Preview {
@@ -128,13 +149,21 @@ struct RememberStyle: ToggleStyle {
 struct SignButton: View {
     var title: String
     var action: () -> Void
+    @State var isLoading: Bool
+
     var body: some View {
         Button(action: {action()}, label: {
-            Text(title)
-                .foregroundStyle(.siginText).font(.title2.bold())
-                .frame(maxWidth: .infinity)
-                .frame(height: 55)
-                .background(.primary, in: .rect(cornerRadius: 16))
+            
+            if(!isLoading){
+                
+                Text(title)
+                    .foregroundStyle(.siginText).font(.title2.bold())
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 55)
+                    .background(.primary, in: .rect(cornerRadius: 16))
+            }else{
+                ProgressView()
+            }
         })
         .tint(.primary)
     }
