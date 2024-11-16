@@ -4,6 +4,7 @@
 
 ## User settings
 xcuserdata/
+LoginApp.xcodeproj/
 
 ## Obj-C/Swift specific
 *.hmap
