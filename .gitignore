@@ -3,8 +3,8 @@
 
 ## User settings
 xcuserdata/
-LoginApp.xcodeproj
-
+xcshareddata/
+LoginApp.xcodeproj/xcshareddata/*
 ## Obj-C/Swift specific
 *.hmap
 
